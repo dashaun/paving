@@ -140,3 +140,6 @@ vmextensions-configuration:
     security_groups:
     - ((pks_api_lb_security_group_id))
     - ((platform_vms_security_group_id))
+- name: tas-blobstore-iam-instance-profile
+  cloud_properties:
+    iam_instance_profile: ((tas_blobstore_iam_instance_profile_name))

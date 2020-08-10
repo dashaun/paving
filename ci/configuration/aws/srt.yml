@@ -52,12 +52,16 @@ product-properties:
       private_key_pem: |
         ((ssl_private_key))
 resource-config:
+  backup_restore:
+    additional_vm_extensions:
+    - tas-blobstore-iam-instance-profile
   compute:
     instances: 1
   control:
     elb_names:
     - alb:((ssh_target_group_name))
     additional_vm_extensions:
+    - tas-blobstore-iam-instance-profile
     - ssh-lb-security-groups
   router:
     elb_names:
